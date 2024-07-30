@@ -11,15 +11,15 @@ In this project I will put in practice some Development technologies and concept
 ---------------------------------------------------------------------------------------------------------------
 
 
-1. Create a new GitHub repository for this project.
-2. Make the initial commit.
-3. Comprobe the repository is working as expected.
-4. Create new DB server in PostgreSQL and assign a port for the app DB.
-5. Save the App in settings.py
-6. Create the 'Book' model using Django integrated ORM and make the first migrations and migrate.
-7. Configurate the serializers.py to manage every HTTP method request like POST, GET, PUT, DELETE.
+1. Create a new GitHub repository for this project. *COMPLETED*
+2. Make the initial commit. *COMPLETED*
+3. Comprobe the repository is working as expected. *COMPLETED*
+4. Create new DB in PostgreSQL, makemigrations and migrate. *COMPLETED*
+5. Save the App in settings.py *COMPLETED*
+6. Create the 'Author' and'Book' model using Django integrated ORM and connect Book with Author using a models.ForeignKey field, then make the first migrations and migrate. *COMPLETED*
+7. Configurate the serializers.py and create the required endpoints URLs to manage every HTTP method request like POST, GET, PUT, DELETE.
 8. Make sure the endpoints for the API are being correctly performed.
 9. Test the 4 basic endpoints using Postman Desktop App.
-10. Dockerize the project to be shared to another user.
-11. Consume the API from external python script.
-12. Documentate the code.
+10. Consume the API from external python script.
+11. Documentate the code.
+12. Dockerize the project to be shared to another user.
