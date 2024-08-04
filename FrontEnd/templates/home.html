@@ -1,0 +1,29 @@
+{% load static %}
+<link rel="stylesheet" href={% static "css/home.css" %}>
+
+
+<h1>Hello {{user}}</h1>
+
+<div class="list-container">
+
+    <div class="books-list">
+        <h2>Books</h2>
+        {% for book in books %}
+            <div class="book-tag">
+                <h4>{{book.title}}: {{book.author}}</h4>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="authors-list">
+        <h2>Author</h2>
+        {% for author in authors %}
+            <div class="author-tag">
+                <h4>{{author.complete_name}}: {{author.country}}</h4>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<a href="{% url 'logout' %}"><span>LOGOUT</span></a>
