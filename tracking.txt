@@ -22,9 +22,10 @@ In this project I will put in practice some Development technologies and concept
 9. Test the 4 basic endpoints using Postman Desktop App and thest those in Django API integrated URLs. *DONE*
 10. Add JWT get token and refresh token URLs. *DONE*
 11. Add routing to the API endpoints. *DONE*
-12. Create FrontEnd app to display the UI and show the Author list and Book List.
+12. Create FrontEnd app to display the UI and show the Author list and Book List. *DONE*
 13. Implement User creation URL, Formulary and View to display the Formulary on the FrontEnd App. *DONE*
-14. Consume the API from external python script.
+14. Consume the API from external python script. *DONE*
 15. Documentate the code.
-16. Add authentication to the API endpoints with JWT.
-17. Dockerize and Integreate with in the project.
+16. Add authentication to the API endpoints with JWT. *DONE*
+17. Implement Unit Test.
+Final. Dockerize the Project to their easily deployment.
