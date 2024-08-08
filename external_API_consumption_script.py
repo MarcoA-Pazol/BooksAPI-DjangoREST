@@ -6,13 +6,14 @@ authors_url = "http://localhost:8600/api/author/"
 books_url = "http://localhost:8600/api/book/"
 
 # [Optional] If your API endpoint requires authentication, include your token here.
-api_token = "your-api-token-here"
-headers = {
-    "Authorization":api_token,
-}
+#api_token = "your-api-token-here"
+#headers = {
+#    "Authorization":api_token,
+#}
 
 # Send GET request to the API endpoint
-response = requests.get(authors_url, headers=headers)
+#response = requests.get(authors_url, headers=headers)
+response = requests.get(authors_url)
 
 # Return response code from succesfully request.
 if response.status_code == 200:

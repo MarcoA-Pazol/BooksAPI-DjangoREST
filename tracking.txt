@@ -1,11 +1,24 @@
 28 / 07 / 2024
 
-Hello I will build a basic API using Django and another technologies: 
--Django REST Framework for API integration.
--Postman for API testing.
--Docker for containerization.
--Git for version controlling.
--PostgreSQL for DB.
+Hello I will build a basic API using Django and another technologies, concepts and practices required as a BackEnd dev.
+
+Technologies
+    -Django REST Framework
+    -Postman
+    -Docker
+    -Git / GitHub
+    -PostgreSQL
+    -Django Integrated ORM
+
+Concepts / Practices:
+    -SCRUM methodologies.
+    -Django Apps project architechture.
+    -Unit Test.
+    -Containerization.
+    -REST APIs
+    -Version Controlling.
+    -API Testing.
+    -DB Connection / DB models.
 
 In this project I will put in practice some Development technologies and concepts that are required in these days as a good stack to build scalable, maintainable and very efficient projects and well functionalities.
 ---------------------------------------------------------------------------------------------------------------
@@ -25,7 +38,9 @@ In this project I will put in practice some Development technologies and concept
 12. Create FrontEnd app to display the UI and show the Author list and Book List. *DONE*
 13. Implement User creation URL, Formulary and View to display the Formulary on the FrontEnd App. *DONE*
 14. Consume the API from external python script. *DONE*
-15. Documentate the code.
+15. Documentate the code. *DONE*
 16. Add authentication to the API endpoints with JWT. *DONE*
-17. Implement Unit Test.
+17. Implement Unit Test for Author and Book models.
+18. Implement Unit Test for normal Views.
+19. Implement Unit Test for API Views.
 Final. Dockerize the Project to their easily deployment.
