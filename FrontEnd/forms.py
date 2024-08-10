@@ -16,9 +16,6 @@ class Register_Form(ModelForm):
         user.username = self.cleaned_data['username']
         user.set_password(self.cleaned_data['password'])
         user.email = self.cleaned_data['email']
-        user.username = self.cleaned_data['username']
-        user.set_password(self.cleaned_data['password'])
-        user.email = self.cleaned_data['email']
         
         if commit:
             user.save()

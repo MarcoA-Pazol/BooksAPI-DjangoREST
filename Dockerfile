@@ -1,28 +1,17 @@
 # Use the official Python image from the Docker Hub
-FROM python:3.10-slim
-
+FROM python:3.10
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 ENV PYTHONPATH=/BooksApi
 
-# Upgrade pip
-RUN pip install --upgrade pip
-
-# Set the working directory in the container
+# Set working directory in the container
 WORKDIR /BooksApi
 
 # Install dependencies
 COPY requirements.txt /BooksApi/
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
 # Copy the project files into the working directory
 COPY . /BooksApi/
-
-# Expose the port your application will run on
-EXPOSE 8000
-
-# Debug: List installed packages
-RUN pip list
-
-# Start the Django server
-CMD ["python", "manage.py", "runserver", "127.0.0.1:8000"]

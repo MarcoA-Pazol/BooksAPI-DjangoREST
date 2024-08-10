@@ -1,11 +1,11 @@
-version: '2.29.1'
-
 services:
   web:
     build: .
-    command: python manage.py runserver 127.0.0.1:8000
+    command: sh -c "python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && python3 manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/BooksApi
+    networks:
+      - "db_connection"
     ports:
       - "8000:8000"
     depends_on:
@@ -15,10 +15,15 @@ services:
     image: postgres:13
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - db_connection
     environment:
-      POSTGRES_DB: BooskApi
+      POSTGRES_DB: BooksApi  # Corrected typo here
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mach1029
 
 volumes:
   postgres_data:
+
+networks:
+  db_connection:

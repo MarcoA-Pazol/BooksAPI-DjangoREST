@@ -1,5 +1,7 @@
 from django.test import TestCase
-from .models import Book, Author
+from BackEnd.models import Book, Author
+from django.urls import reverse
+from django.contrib.auth.models import User
 
 """Testing methods and functions to do the Unit Testing for the project units (modules, models, methods, classes, etc)"""
 
@@ -175,3 +177,63 @@ class ModelTest_Author(TestCase):
         with self.assertRaises(Author.DoesNotExist):
             test_instance = Author.objects.get(first_name="Lili", last_name="Dayns")
         print("[Done] Author model can manage the case an instance does not exist with an exception.")
+        
+
+"""Views testing"""
+class ViewTest_home(TestCase):
+    """
+        Test if 'home' view from FrontEnd.views renders the correct template, context and get the correct status code
+
+        Methods:
+            test_redirect_to_login_if_not_authenticated(self): Test if the view redirects to login when user is not authenticated.
+            test_view_for_authenticated_user(self): Test if home view render correct context, template and status code is correct when the user is authenticated.
+    """
+    
+    def test_redirect_to_login_if_not_authenticated(self):
+        """
+            Test if 'home' view redirects unauthenticated users to the login page.
+            
+            Attributes:
+                response (Object): The requested view response
+                
+            Returns: 
+                None
+        """
+        
+        response = self.client.get(reverse('home'))
+        
+        # Check that the response status code is 302 (redirect)
+        self.assertEqual(response.status_code, 302)
+        
+        # Check that the redirected URL is correct
+        self.assertRedirects(response, f"{reverse('login')}?next={reverse('home')}")
+        
+        print("[Done] The view redirects unauthenticated users to the login page as expected.")
+        
+    def test_view_for_authenticated_user(self):
+        """
+            Test if the 'home' view renders the correct template and context for authenticated users.
+            
+            Attributes:
+                response (Object): Response from the requested view
+        """
+        
+        # Create user to log them in
+        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.client.login(username='testuser', password='testpassword')
+        
+        response = self.client.get(reverse('home'))
+        
+        # Check that the response status code is 200 (OK)
+        self.assertEqual(response.status_code, 200)
+        
+        # Check that the view renders the correct template
+        self.assertTemplateUsed(response, 'home.html')
+        
+        # Check that the context contains the expected variables
+        self.assertIn('user', response.context)
+        self.assertIn('authors', response.context)
+        self.assertIn('books', response.context)
+        
+        print("[Done] The view renders the correct template and context for authenticated users.")
+        
