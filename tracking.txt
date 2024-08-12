@@ -42,6 +42,6 @@ In this project I will put in practice some Development technologies and concept
 16. Add authentication to the API endpoints with JWT. *DONE*
 17. Implement Unit Test for Author and Book models. *DONE*
 18. Implement Unit Test for normal Views. *DONE*
-19. Implement Unit Test for django forms. 
-20. Implement Unit Test for API Views.
+19. Implement Unit Test for django forms. *DONE*
+20. Implement Unit Test for API Views. *DONE*
 Final. Dockerize the Project to their easily deployment.
